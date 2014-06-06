@@ -6,9 +6,10 @@ $mobile: new-breakpoint(max-width 480px 4);
 $tablet: new-breakpoint(min-width 760px 8);
 
 .typography {
-  $sans-serif: 'Ubuntu', Helvetica, sans-serif !global;
+  $sans-serif: 'PT Sans', Helvetica, sans-serif !global;
   $serif: 'Averia Serif Libre', cursive !global;
   $fixed: 'Ubuntu Mono', monospace !global;
+  font-size: 18px;
 
   h1 {
     font-family: $serif;
