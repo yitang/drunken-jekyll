@@ -1,0 +1,38 @@
+<header class="dj-header">
+
+<!--Refills Nav Bar-->
+
+  <div class="navigation">
+    <div class="menu-wrapper">
+      <a href="{{ site.url }}/" class="logo">
+        <img src="{{ base.url }}/images/iron-samurai-logo.png" alt="the iron samurai">
+      </a>
+      <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
+      <div class="nav">
+        <ul id="navigation-menu">
+              {% for link in site.links %}
+                <li>
+                  {% if link.external %}
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% else %}
+                    <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                  {% endif %} 
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!--DJ Header Title Wrap -->
+
+  <div class="dj-header-title-wrap">
+    <img class="header-logo" src="{{ site.url }}/images/nick-horton-pink.png">
+    <h1 class="dj-site-title"><a href="{{ site.url }}/" class="niotitle">{{ site.title }}
+    </a></h1>
+    <h2 class="dj-site-description">{{ site.description }}</h2>
+  </div>
+
+</header>

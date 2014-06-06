@@ -1,0 +1,104 @@
+/*
+ * Variables
+*/
+
+$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(min-width 760px 8);
+
+.typography {
+  $sans-serif: 'Ubuntu', Helvetica, sans-serif !global;
+  $serif: 'Averia Serif Libre', cursive !global;
+  $fixed: 'Ubuntu Mono', monospace !global;
+
+  h1 {
+    font-family: $serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: .6rem;
+
+    @include media($medium-screen) {
+      font-size: 2rem;
+    }
+  }
+
+  h2 {
+    font-family: $serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2rem;
+    margin-bottom: 1.2rem;
+
+    @include media($medium-screen) {
+      font-size: 1.4rem;
+    }
+  }
+
+  h3 {
+   font-family: $serif;
+   font-size: 1rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   line-height: 1.2rem;
+   margin-bottom: 1.5rem; 
+  }
+
+  h4 {
+    font: {
+      family: $sans-serif;
+      size: 0.8rem;
+      weight: 700;
+    }
+    line-height: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-family: $sans-serif;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+  }
+}
+
+
+// Main Content Styles
+// ----------------------------------------
+
+@mixin dj-content-wrap-container {
+  @include clearfix;
+  max-width: 750px;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: {
+    left: 10px;
+    right: 10px;
+  }
+}  
+
+.dj-content {
+  background-color: #fff;
+  .wrap {
+    @include dj-content-wrap-container;
+    header {
+      margin-bottom: 5px;
+      h1 {
+        font-size: 2.4rem;
+        font-style: bold;
+        color: #555;
+      }
+      h2 {
+        font-size: 1.4rem;
+        font-style: oblique;
+        color: #999;
+      }
+      .meta {
+        font-size: 0.8rem;
+        color: #aaa;
+      }
+    }
+    article {
+      color: #555;
+    }
+  }
+}

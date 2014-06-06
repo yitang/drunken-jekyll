@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="dj-page-title">{{ page.title }}</h1>
+    <h2 class="dj-page-subtitle">{{ page.subtitle }}</h2>
+    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  </header>
+
+  <article class="dj-article">
+  {{ content }}
+  </article>
+
+  <hr />
+
+  <p class="dj-tags"><span class="dj-tag-pre">Tagged With: </span><span class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag | cgi_encode }}" title="Pages tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span></p>
+
+</div>
