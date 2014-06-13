@@ -12,13 +12,13 @@
 
 
 // Drunken-Jekyll Styles
+@import 'dj-variables';
 @import 'dj-typography';
 @import 'dj-highlight';
 @import 'dj-header';
 
 
-
-// Post index layout
+// Article page index layout
 .dj-index-post-list {
   margin: 0;
   padding: 0;

@@ -1,11 +1,40 @@
 ---
 layout: default
+title: Home
 ---
 
-<h1 class="dj-index-title">Recent Posts</h1>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="dj-post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+    <h2 class="dj-page-subtitle">{{ page.subtitle }}</h2>
 
-<ul class="dj-index-post-list">
-{% for post in site.posts limit:10 %} 
-  <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="dj-index-entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
-{% endfor %}
-</ul>
+    <span class="meta">{{ post.date | date_to_string }}</span>
+    <div class="dj-article">
+    {{ post.content }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
+

@@ -1,6 +1,7 @@
 /*
- * Variables
+ * Typography
 */
+ 
 
 $mobile: new-breakpoint(max-width 480px 4);
 $tablet: new-breakpoint(min-width 760px 8);
@@ -9,7 +10,8 @@ $tablet: new-breakpoint(min-width 760px 8);
   $sans-serif: 'PT Sans', Helvetica, sans-serif !global;
   $serif: 'Averia Serif Libre', cursive !global;
   $fixed: 'Ubuntu Mono', monospace !global;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 24px;
 
   h1 {
     font-family: $serif;
@@ -60,13 +62,19 @@ $tablet: new-breakpoint(min-width 760px 8);
   }
 }
 
+.dj-post-title {
+  color: $base01;
+  a {
+    color: $base00;
+  }
+}
 
 // Main Content Styles
 // ----------------------------------------
 
 @mixin dj-content-wrap-container {
   @include clearfix;
-  max-width: 750px;
+  max-width: 650px;
   margin: {
     left: auto;
     right: auto;
